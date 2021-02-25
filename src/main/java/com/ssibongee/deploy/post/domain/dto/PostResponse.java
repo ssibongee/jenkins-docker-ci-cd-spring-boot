@@ -34,7 +34,7 @@ public class PostResponse {
         this.modifiedTime = modifiedTime;
     }
 
-    public PostResponse of(Post post) {
+    public static PostResponse of(Post post) {
         return PostResponse.builder()
                 .id(post.getId())
                 .title(post.getTitle())
