@@ -32,7 +32,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    sh 'ssh -o StrictHostKeyChecking=no -p ${DEPLOY_SERVER_PORT} ${DEPLOY_SERVER_IP} -T /var/lib/jenkins/deploy.sh'
+                    sh 'ssh -i ~/.ssh/ -p ${DEPLOY_SERVER_PORT} ${DEPLOY_SERVER_IP} -T /var/lib/jenkins/deploy.sh'
                 }
             }
         }
