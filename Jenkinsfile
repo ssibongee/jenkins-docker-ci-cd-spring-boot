@@ -32,7 +32,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    sh "ssh -p ${DEPLOY_SERVER_PORT} ${DEPLOY_SERVER_IP}"       
+                    sh "ssh -p ${DEPLOY_SERVER_PORT} ${DEPLOY_SERVER_IP} -T sh < ./deploy.sh"       
                 }
             }
         }
