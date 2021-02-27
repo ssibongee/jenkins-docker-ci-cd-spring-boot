@@ -32,7 +32,7 @@ pipeline {
         stage('deploy') {
             steps {
                 script {
-                    sh "ssh ${DEPLOY_SERVER_IP} -p ${DEPLOY_SERVER_PORT}"
+                    sh "ssh -p 10038 root@101.101.160.49 /var/lib/jenkins/deploy.sh"
                     echo success
                 }
             }
