@@ -16,8 +16,8 @@ public class PostApiController {
     private final PostService postService;
 
     @GetMapping("/{postId}")
-    public ResponseEntity<PostResponse> findById(@PathVariable Long postId) {
-        return ResponseEntity.ok(postService.findById(postId));
+    public String findById(@PathVariable Long postId) {
+        return String.valueOf(postId);
     }
 
     @PostMapping
