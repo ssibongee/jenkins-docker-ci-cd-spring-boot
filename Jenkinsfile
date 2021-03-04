@@ -28,7 +28,16 @@ pipeline {
                 }
             }
         }
-        
+
+        stage('docker build & push docker hub') {
+            steps {
+                script {
+                    sh 'docker build -t ssibongee/daangnmarket .'
+                    sh 'docker push ssibongee/daangnmarket'
+                }
+            }
+        }
+
         stage('deploy') {
             steps {
                 script {
