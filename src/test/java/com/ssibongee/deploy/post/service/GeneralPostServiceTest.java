@@ -37,7 +37,7 @@ class GeneralPostServiceTest {
         when(postRepository.save(any())).thenReturn(post);
         when(post.getId()).thenReturn(1L);
 
-        assertThat(postService.save(postCreateRequest)).isEqualTo(7L);
+        assertThat(postService.save(postCreateRequest)).isEqualTo(8L);
     }
 
     @Test
