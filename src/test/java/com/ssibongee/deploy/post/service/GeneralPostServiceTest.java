@@ -33,7 +33,7 @@ class GeneralPostServiceTest {
     void successToCreatePost() {
         PostCreateRequest postCreateRequest = new PostCreateRequest("title", "author", "content");
         Post post = mock(Post.class);
-
+asdf
         when(postRepository.save(any())).thenReturn(post);
         when(post.getId()).thenReturn(1L);
 
