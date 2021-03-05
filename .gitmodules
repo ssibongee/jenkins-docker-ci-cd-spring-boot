@@ -1,0 +1,3 @@
+[submodule "spring-boot-api-application"]
+	path = spring-boot-api-application
+	url = https://github.com/ssibongee/spring-boot-api-application.git
