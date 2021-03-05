@@ -7,6 +7,7 @@ import com.ssibongee.deploy.post.domain.dto.PostUpdateRequest;
 import com.ssibongee.deploy.post.domain.entity.Post;
 import com.ssibongee.deploy.post.exception.PostNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,9 +17,13 @@ public class GeneralPostService implements PostService {
 
     private final PostRepository postRepository;
 
+    @Value("{message}")
+    public String message;
+
     @Override
     @Transactional
     public Long save(PostCreateRequest request) {
+
         return postRepository.save(request.toEntity()).getId();
     }
 

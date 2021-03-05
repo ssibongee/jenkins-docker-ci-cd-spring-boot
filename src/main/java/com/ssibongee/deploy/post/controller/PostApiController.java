@@ -3,8 +3,10 @@ package com.ssibongee.deploy.post.controller;
 import com.ssibongee.deploy.post.domain.dto.PostCreateRequest;
 import com.ssibongee.deploy.post.domain.dto.PostResponse;
 import com.ssibongee.deploy.post.domain.dto.PostUpdateRequest;
+import com.ssibongee.deploy.post.service.GeneralPostService;
 import com.ssibongee.deploy.post.service.PostService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +15,14 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/posts")
 public class PostApiController {
 
-    private final PostService postService;
+    private final GeneralPostService postService;
+
+    @Value("${message}")
+    private String message;
 
     @GetMapping("/{postId}")
     public String findById(@PathVariable Long postId) {
-        return String.valueOf(postId);
+        return postService.message;
     }
 
     @PostMapping
