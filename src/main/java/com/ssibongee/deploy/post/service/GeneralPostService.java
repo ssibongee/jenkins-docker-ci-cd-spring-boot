@@ -17,7 +17,7 @@ public class GeneralPostService implements PostService {
 
     private final PostRepository postRepository;
 
-    @Value("{message}")
+    @Value("${message}")
     public String message;
 
     @Override
